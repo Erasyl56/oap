@@ -1,0 +1,6 @@
+full_name = input("Erasyl: ")
+birth_year = int(input("2008: "))
+avg_grade = float(input("95: "))
+print(f"Аты-жөні: {full_name}, Типі: {type(full_name)}")
+print(f"Туған жылы: {birth_year}, Типі: {type(birth_year)}")
+print(f"Орташа балы: {avg_grade}, Типі: {type(avg_grade)}")
