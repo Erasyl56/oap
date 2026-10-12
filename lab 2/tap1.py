@@ -1,6 +1,9 @@
-full_name = input("Erasyl: ")
-birth_year = int(input("2008: "))
-avg_grade = float(input("95: "))
-print(f"Аты-жөні: {full_name}, Типі: {type(full_name)}")
-print(f"Туған жылы: {birth_year}, Типі: {type(birth_year)}")
-print(f"Орташа балы: {avg_grade}, Типі: {type(avg_grade)}")
+# Пайдаланушыдан мәліметтерді енгізу
+full_name = input("Аты-жөніңізді енгізіңіз: ")
+birth_year = int(input("Туған жылыңызды енгізіңіз: "))
+average_score = float(input("Орташа балыңызды енгізіңіз: "))
+
+# Мәндер мен типтерін шығару
+print(f"Мәні: {full_name}, Типі: {type(full_name)}")
+print(f"Мәні: {birth_year}, Типі: {type(birth_year)}")
+print(f"Мәні: {average_score}, Типі: {type(average_score)}")
