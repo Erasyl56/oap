@@ -1,12 +1,15 @@
-n = int(input("6 "))
+# n элемент санын енгізу және тексеру
+n = int(input("Массив элементтерінің санын енгізіңіз (n > 0): "))
 
 while n <= 0:
-    n = int(input("3 "))
+    print("Қате! Сан 0-ден үлкен болуы тиіс.")
+    n = int(input("Қайтадан енгізіңіз: "))
 
-massiv = []
-
+# Массивті құру және толтыру
+numbers = []
 for i in range(n):
-    san = int(input("7 "))
-    massiv.append(san)
+    element = int(input(f"{i}-ші индекстегі элементті енгізіңіз: "))
+    numbers.append(element)
 
-print("Массив:", massiv)
+# Массивті шығару
+print("Енгізілген массив:", numbers)
