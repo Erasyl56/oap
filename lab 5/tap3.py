@@ -1,19 +1,16 @@
-massiv = [5, -3, 8, -2, 10, 7]
+positive_count = 0
+negative_count = 0
+even_count = 0
 
-on = 0
-teris = 0
-zhup = 0
+for item in numbers:
+    if item > 0:
+        positive_count += 1
+    elif item < 0:
+        negative_count += 1
+    
+    if item % 2 == 0:
+        even_count += 1
 
-for san in massiv:
-    if san > 0:
-        on += 1
-
-    if san < 0:
-        teris += 1
-
-    if san % 2 == 0:
-        zhup += 1
-
-print("Оң сандар саны:", on)
-print("Теріс сандар саны:", teris)
-print("Жұп сандар саны:", zhup)
+print(f"Оң сандар саны: {positive_count}")
+print(f"Теріс сандар саны: {negative_count}")
+print(f"Жұп элементтер саны: {even_count}")
