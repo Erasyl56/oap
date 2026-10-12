@@ -1,13 +1,12 @@
-massiv = [5, 8, 2, 10, 4]
+search_value = int(input("Ізделетін санды енгізіңіз: "))
+found_index = -1
 
-izdelgen = int(input("Ізделетін санды енгізіңіз: "))
-tabyldy = False
+for i in range(len(numbers)):
+    if numbers[i] == search_value:
+        found_index = i
+        break  # Табылғаннан кейін циклді тоқтату
 
-for i in range(len(massiv)):
-    if massiv[i] == izdelgen:
-        print("Санның индексі:", i)
-        tabyldy = True
-        break
-
-if not tabyldy:
-    print("Мұндай сан массивте жоқ")
+if found_index != -1:
+    print(f"Сан массивте табылды. Индексі: {found_index}")
+else:
+    print("Бұл сан массивте жоқ.")
