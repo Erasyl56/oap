@@ -1,11 +1,8 @@
-price = float(input("4999: "))
-quantity = int(input("6: "))
-discount = float(input("8: "))
+pi = 3.14159
+radius = float(input("Шеңбердің радиусын енгізіңіз: "))
 
-total = price * quantity
-discount_sum = total * discount / 100
-final_sum = total - discount_sum
+length = 2 * pi * radius
+area = pi * (radius ** 2)
 
-print("Жалпы сома:", total)
-print("Жеңілдік сомасы:", discount_sum)
-print("Төленетін сома:", final_sum)
+print(f"Шеңбердің ұзындығы: {length:.2f}")
+print(f"Шеңбердің ауданы: {area:.2f}")
