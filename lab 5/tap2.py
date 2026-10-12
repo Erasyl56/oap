@@ -1,15 +1,21 @@
-# n элемент санын енгізу және тексеру
-n = int(input("Массив элементтерінің санын енгізіңіз (n > 0): "))
+# Массивтің бос емес екенін ескерсек (1-тапсырмадағы numbers тізімін қолданамыз)
+if len(numbers) > 0:
+    total_sum = 0
+    max_val = numbers[0]
+    min_val = numbers[0]
 
-while n <= 0:
-    print("Қате! Сан 0-ден үлкен болуы тиіс.")
-    n = int(input("Қайтадан енгізіңіз: "))
+    for item in numbers:
+        total_sum += item
+        if item > max_val:
+            max_val = item
+        if item < min_val:
+            min_val = item
 
-# Массивті құру және толтыру
-numbers = []
-for i in range(n):
-    element = int(input(f"{i}-ші индекстегі элементті енгізіңіз: "))
-    numbers.append(element)
+    average = total_sum / len(numbers)
 
-# Массивті шығару
-print("Енгізілген массив:", numbers)
+    print(f"Элементтер қосындысы: {total_sum}")
+    print(f"Максималды элемент: {max_val}")
+    print(f"Минималды элемент: {min_val}")
+    print(f"Арифметикалық ортасы: {average:.2f}")
+else:
+    print("Массив бос.")
