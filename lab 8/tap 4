@@ -1,1 +1,51 @@
+def linear_search(items, target):
+    """Сызықтық іздеу функциясы"""
+    comparisons = 0
+    for i in range(len(items)):
+        comparisons += 1
+        if items[i] == target:
+            return i, comparisons
+    return -1, comparisons
 
+def binary_search(items, target):
+    """Екілік іздеу функциясы (сұрыпталған тізім үшін)"""
+    left, right = 0, len(items) - 1
+    comparisons = 0
+    while left <= right:
+        mid = (left + right) // 2
+        comparisons += 1
+        if items[mid] == target:
+            return mid, comparisons
+        elif items[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1, comparisons
+
+# Тізім өлшемдері
+sizes = [10, 100, 1000]
+
+print("==================================================================")
+print(" 4-ТАПСЫРМА: ДЕРЕКТЕР КӨЛЕМІНЕ ТӘУЕЛДІЛІКТІ ЗЕРТТЕУ НӘТИЖЕЛЕРІ")
+print("==================================================================")
+print(f"{'Өлшем (n)':<10} | {'Іздеу әдісі':<12} | {'Соңғы элементті іздеу сақ.':<28} | {'Жоқ мәнді іздеу сақ.':<22}")
+print("-" * 80)
+
+for n in sizes:
+    # range арқылы реттелген тізім құру (1-ден n-ге дейін)
+    arr = list(range(1, n + 1))
+    
+    last_elem = n          # Тізімдегі ең соңғы элемент
+    missing_elem = n + 999 # Тізімде мүлде жоқ мән
+    
+    # Сызықтық іздеу
+    _, lin_last_comp = linear_search(arr, last_elem)
+    _, lin_none_comp = linear_search(arr, missing_elem)
+    
+    # Екілік іздеу
+    _, bin_last_comp = binary_search(arr, last_elem)
+    _, bin_none_comp = binary_search(arr, missing_elem)
+    
+    print(f"{n:<10} | {'Сызықтық':<12} | {lin_last_comp:<28} | {lin_none_comp:<22}")
+    print(f"{n:<10} | {'Екілік':<12} | {bin_last_comp:<28} | {bin_none_comp:<22}")
+    print("-" * 80)
